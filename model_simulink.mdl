@@ -7,7 +7,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.4"
+    ComputedModelVersion    "1.5"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -40,7 +40,7 @@ Model {
       $ObjectID		      3
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [-8.0, -8.0, 1456.0, 876.0]
+      Location		      [-8.0, 0.0, 1456.0, 876.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		4
@@ -49,7 +49,7 @@ Model {
 	DockPosition		"Left"
 	Width			[50]
 	Height			[50]
-	Filter			[8]
+	Filter			[9]
       }
       Object {
 	$PropName		"ExplorerBarInfo"
@@ -65,8 +65,8 @@ Model {
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
 	Extents			[1406.0, 702.0]
-	ZoomFactor		[1.0]
-	Offset			[0.0, 0.0]
+	ZoomFactor		[1.5]
+	Offset			[74.9874966184298, 5.7041663626829822]
       }
     }
   }
@@ -76,9 +76,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Home"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Dec 27 23:06:33 2015"
-  RTWModifiedTimeStamp	  373158268
-  ModelVersionFormat	  "1.%<AutoIncrement:4>"
+  LastModifiedDate	  "Mon Dec 28 20:19:38 2015"
+  RTWModifiedTimeStamp	  373234707
+  ModelVersionFormat	  "1.%<AutoIncrement:5>"
   ConfigurationManager	  "none"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -877,7 +877,7 @@ Model {
   }
   System {
     Name		    "model_simulink"
-    Location		    [-8, -8, 1448, 868]
+    Location		    [-8, 0, 1448, 876]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -889,21 +889,21 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "100"
+    ZoomFactor		    "150"
     ReportName		    "simulink-default.rpt"
     SIDHighWatermark	    "14"
     Block {
       BlockType		      Derivative
       Name		      "Derivative"
       SID		      "12"
-      Position		      [365, 195, 395, 225]
+      Position		      [435, 230, 465, 260]
       ZOrder		      -1
     }
     Block {
       BlockType		      Gain
       Name		      "Gain"
       SID		      "7"
-      Position		      [240, 85, 270, 115]
+      Position		      [235, 175, 265, 205]
       ZOrder		      -8
       Gain		      "39.42"
       ParamDataTypeStr	      "Inherit: Inherit via internal rule"
@@ -914,7 +914,7 @@ Model {
       BlockType		      Gain
       Name		      "Gain1"
       SID		      "13"
-      Position		      [310, 195, 340, 225]
+      Position		      [305, 230, 335, 260]
       ZOrder		      -8
       Gain		      "0.7692"
       ParamDataTypeStr	      "Inherit: Inherit via internal rule"
@@ -926,10 +926,10 @@ Model {
       Name		      "Scope"
       SID		      "5"
       Ports		      [1]
-      Position		      [560, 124, 590, 156]
+      Position		      [840, 124, 870, 156]
       ZOrder		      -3
       Floating		      off
-      Location		      [1, 100, 1441, 859]
+      Location		      [10, 100, 1450, 859]
       Open		      off
       NumInputPorts	      "1"
       ZoomMode		      "xonly"
@@ -953,28 +953,11 @@ Model {
       ScrollMode	      off
     }
     Block {
-      BlockType		      Step
-      Name		      "Step"
-      SID		      "3"
-      Position		      [110, 125, 140, 155]
-      ZOrder		      -22
-      SampleTime	      "0"
-    }
-    Block {
-      BlockType		      Step
-      Name		      "Step1"
-      SID		      "14"
-      Position		      [340, 15, 370, 45]
-      ZOrder		      -22
-      After		      "0.1"
-      SampleTime	      "0"
-    }
-    Block {
       BlockType		      Sum
       Name		      "Sum"
       SID		      "4"
       Ports		      [2, 1]
-      Position		      [175, 130, 195, 150]
+      Position		      [175, 180, 195, 200]
       ZOrder		      -18
       ShowName		      off
       IconShape		      "round"
@@ -988,7 +971,7 @@ Model {
       Name		      "Sum1"
       SID		      "6"
       Ports		      [4, 1]
-      Position		      [395, 100, 425, 130]
+      Position		      [505, 125, 535, 155]
       ZOrder		      -18
       ShowName		      off
       IconShape		      "round"
@@ -1001,7 +984,7 @@ Model {
       BlockType		      TransferFcn
       Name		      "Transfer Fcn"
       SID		      "9"
-      Position		      [310, 137, 370, 173]
+      Position		      [340, 172, 400, 208]
       ZOrder		      -9
       Denominator	      "[3.077 0]"
     }
@@ -1009,13 +992,30 @@ Model {
       BlockType		      TransferFcn
       Name		      "Transfer Fcn1"
       SID		      "2"
-      Position		      [450, 77, 510, 113]
+      Position		      [585, 122, 645, 158]
       ZOrder		      -9
       Denominator	      "[1 6 5 0]"
     }
+    Block {
+      BlockType		      Step
+      Name		      "d(t)"
+      SID		      "14"
+      Position		      [450, 20, 480, 50]
+      ZOrder		      -22
+      After		      "0.1"
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Step
+      Name		      "u(t)"
+      SID		      "3"
+      Position		      [100, 175, 130, 205]
+      ZOrder		      -22
+      SampleTime	      "0"
+    }
     Line {
       ZOrder		      1
-      SrcBlock		      "Step"
+      SrcBlock		      "u(t)"
       SrcPort		      1
       DstBlock		      "Sum"
       DstPort		      1
@@ -1024,44 +1024,39 @@ Model {
       ZOrder		      2
       SrcBlock		      "Transfer Fcn1"
       SrcPort		      1
-      Points		      [0, 45; 15, 0]
+      Points		      [137, 0]
       Branch {
-	ZOrder			3
-	DstBlock		"Scope"
-	DstPort			1
-      }
-      Branch {
-	ZOrder			4
-	Points			[0, 155; -345, 0]
+	ZOrder			30
+	Points			[0, 219; -602, 0]
 	DstBlock		"Sum"
 	DstPort			2
+      }
+      Branch {
+	ZOrder			27
+	DstBlock		"Scope"
+	DstPort			1
       }
     }
     Line {
       ZOrder		      5
       SrcBlock		      "Gain"
       SrcPort		      1
-      Points		      [0, -30; 10, 0]
+      Points		      [15, 0]
       Branch {
-	ZOrder			6
-	Points			[20, 0]
-	Branch {
-	  ZOrder		  16
-	  Points		  [54, 0; 0, 24; 1, 6; 0, 15]
-	  DstBlock		  "Sum1"
-	  DstPort		  2
-	}
-	Branch {
-	  ZOrder		  7
-	  Points		  [0, 85]
-	  DstBlock		  "Transfer Fcn"
-	  DstPort		  1
-	}
+	ZOrder			33
+	Points			[0, -50]
+	DstBlock		"Sum1"
+	DstPort			2
       }
       Branch {
-	ZOrder			9
-	Points			[0, 140]
+	ZOrder			25
+	Points			[0, 55]
 	DstBlock		"Gain1"
+	DstPort			1
+      }
+      Branch {
+	ZOrder			7
+	DstBlock		"Transfer Fcn"
 	DstPort			1
       }
     }
@@ -1069,7 +1064,7 @@ Model {
       ZOrder		      10
       SrcBlock		      "Transfer Fcn"
       SrcPort		      1
-      Points		      [15, 0; 0, -19]
+      Points		      [94, 0]
       DstBlock		      "Sum1"
       DstPort		      3
     }
@@ -1077,7 +1072,6 @@ Model {
       ZOrder		      11
       SrcBlock		      "Sum"
       SrcPort		      1
-      Points		      [10, 0; 0, -40]
       DstBlock		      "Gain"
       DstPort		      1
     }
@@ -1085,7 +1079,6 @@ Model {
       ZOrder		      12
       SrcBlock		      "Sum1"
       SrcPort		      1
-      Points		      [0, -20]
       DstBlock		      "Transfer Fcn1"
       DstPort		      1
     }
@@ -1100,13 +1093,13 @@ Model {
       ZOrder		      14
       SrcBlock		      "Derivative"
       SrcPort		      1
-      Points		      [10, 0]
+      Points		      [50, 0]
       DstBlock		      "Sum1"
       DstPort		      4
     }
     Line {
       ZOrder		      17
-      SrcBlock		      "Step1"
+      SrcBlock		      "d(t)"
       SrcPort		      1
       Points		      [14, 0]
       DstBlock		      "Sum1"
